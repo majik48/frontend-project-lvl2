@@ -1,0 +1,29 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "Вычислитель отличий",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majik48/frontend-project-lvl2.git"
+  },
+  "author": "Evgeniy A.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/majik48/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/majik48/frontend-project-lvl2#readme",
+  "type": "module",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "dependencies": {
+    "commander": "^8.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}
