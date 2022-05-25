@@ -1,9 +1,7 @@
 import { readFileSync } from 'fs';
 import _ from 'lodash';
 
-
-
-export default (path1, path2) => {
+const genDiff =  (path1, path2) => {
   const file1 = readFileSync(path1, 'utf8');
   const file2 = readFileSync(path2, 'utf8');
   const parsedFile1 = JSON.parse(file1);
@@ -19,23 +17,18 @@ export default (path1, path2) => {
         result += `  ${key}: ${parsedFile1[key]}\n`;
       }
       else {
-        result += `- ${key}: ${parsedFile1[key]}\n`
-        result += `+ ${key}: ${parsedFile2[key]}\n`
+        result += `- ${key}: ${parsedFile1[key]}\n`;
+        result += `+ ${key}: ${parsedFile2[key]}\n`;
       }
     }
     else if (_.has(parsedFile1, key)) {
-      result += `- ${key}: ${parsedFile1[key]}\n`
+      result += `- ${key}: ${parsedFile1[key]}\n`;
     }
     else if (_.has(parsedFile2, key)) {
-      result += `+ ${key}: ${parsedFile2[key]}\n`
+      result += `+ ${key}: ${parsedFile2[key]}\n`;
     }
-
   }
-
-
   console.log(result);
-
-
-
 };
 
+export default genDiff;
